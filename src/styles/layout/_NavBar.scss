@@ -1,0 +1,23 @@
+.navbar {
+  background-color: $cerceta;
+  padding: 1rem 2rem;
+  box-shadow: 0px 10px 19px -12px rgba(0,0,0,0.75);
+
+}
+
+.btn,
+.btn:focus,
+.btn:hover {
+  outline: none;
+  border: transparent;
+}
+
+.navbar *,
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+  color: $blanco;
+}
+.nav-link:focus,
+.nav-link:hover {
+  color: $gray2;
+}
