@@ -3,9 +3,12 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import { Activos } from "./components/activos/Activos";
+import { Altas } from "./components/activos/Altas";
+import { Bajas } from "./components/activos/Bajas";
 import { Login } from "./components/auth/Login";
 import { NuevaCuenta } from "./components/auth/NuevaCuenta";
-import { Dashboard } from "./components/Dashboard/Dashboard";
+import { Home } from "./components/Home/Home";
 function App() {
 
   return (
@@ -13,7 +16,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/nueva-cuenta" element={<NuevaCuenta />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/activos'>
+          <Route index element={<Activos />}/>
+          <Route path='altas' element={<Altas />}/>
+          <Route path='bajas' element={<Bajas />}/>
+        </Route>
       </Routes>
     </Router >
   );

@@ -2,7 +2,14 @@
   background-color: $cerceta;
   padding: 1rem 2rem;
   box-shadow: 0px 10px 19px -12px rgba(0,0,0,0.75);
-
+  position: relative;
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+}
+.nav-close{
+  left: 78px;
+  width: calc(100% - 78px);
 }
 
 .btn,
@@ -20,4 +27,15 @@
 .nav-link:focus,
 .nav-link:hover {
   color: $gray2;
+}
+@media screen and (max-width: 400px) {
+
+  .navbar {
+    left: 78px;
+    width: calc(100% - 78px);
+  }
+  .nav-close{
+    left: 0px;
+    width: 100%;
+  }
 }

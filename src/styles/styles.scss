@@ -2,6 +2,8 @@
 @import './base/base';
 
 // Components
+
+@import './pages/Login';
 @import './layout/Sidebar';
 @import './layout/NavBar';
-@import './components/Dashboard';
+@import './components/Home';

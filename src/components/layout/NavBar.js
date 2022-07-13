@@ -8,18 +8,15 @@ export const NavBar = ({ toggle, setToggle }) => {
     setToggle(!toggle)
   }
   return (
-    <nav className="navbar navbar-expand-lg  p-0">
+    <nav className={`navbar navbar-expand-lg  p-0 ${toggle ? 'nav-close' : ''}`}>
       <div className="container-fluid py-3">
-        <button className="btn p-1 me-3" id='menu-toggle' onClick={toogleMenu} >
+        <button className="btn p-1 me-3" onClick={toogleMenu} >
           <FaBars className="m-1" />
         </button>
-        {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon" />
-        </button> */}
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/dashboard">Home</Link>
+              <Link className="nav-link active" to="/home">Home</Link>
             </li>
           </ul>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
