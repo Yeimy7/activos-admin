@@ -1,77 +1,10 @@
 
-.page-section{
-  position: relative;
-  background: $gray;
-  border: 1px solid red;
-  height: calc(100vh - 100px);
-  left: 260px;
-  width: calc(100% - 260px);
-  transition: all 0.5s ease;
-}
- .page-section-close{
-  left: 78px;
-  width: calc(100% - 78px);
-}
-.page-section .page-content{
-  height: 60px;
+.home{
   display: flex;
-  align-items: center;
-  border: 2px solid blue;
-}
-
-
-
-
-
-.cards{
-  position: relative;
-  left: 260px;
-  width: calc(100% - 260px);
-  transition: all 0.5s ease;
-}
-.cards-close{
-  left: 78px;
-  width: calc(100% - 78px);
-}
-
-.revinue.revinue-one_hybrid {
-  background: linear-gradient(
-    121deg,
-    rgba(194, 13, 90, 1) 25%,
-    rgb(162, 101, 182) 100%
-  );
-}
-.revinue {
-  padding-top: 15px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.w-title {
-  display: flex;
-  padding: 0 7px 10px;
-  align-items: center;
-}
-.w-icon {
-  font-size: 28px;
-  color: $blanco;
-  padding-right: .5rem;
-}
-.sm-chart-text{
-  line-height: 20px;
-  color: $blanco;
-}
-p.w-value{
-  font-size: 16px;
-}
-
-@media screen and (max-width: 400px) {
-
-  .page-section {
-    left: 78px;
-    width: calc(100% - 78px);
-  }
-  .page-section-close{
-    left: 0px;
-    width: 100%;
+  .widgets{
+    display: flex;
+    padding: 20px;
+    gap: 20px;
   }
 }
+

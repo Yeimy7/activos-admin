@@ -1,0 +1,29 @@
+.page-section {
+  position: relative;
+  background: $blanco;
+  border: 1px solid red;
+  // height: calc(100vh - 100px);
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+  display: flex;
+  .page-content {
+    flex: 5;
+    width: 100%;
+  }
+}
+.page-section-close {
+  left: 78px;
+  width: calc(100% - 78px);
+}
+
+@media screen and (max-width: 400px) {
+  .page-section {
+    left: 78px;
+    width: calc(100% - 78px);
+  }
+  .page-section-close {
+    left: 0px;
+    width: 100%;
+  }
+}

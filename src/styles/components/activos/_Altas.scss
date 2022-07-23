@@ -1,0 +1,43 @@
+.textField {
+  height: 32px;
+  width: 200px;
+  border: 1px solid #e5e5e5;
+  padding: 0 32px 0 16px;
+}
+.textField:hover {
+  cursor: pointer;
+}
+
+.btnBuscar {
+  height: 34px;
+  width: 32px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.barraBusqueda {
+  float: right;
+  padding: 20px;
+}
+.btnicon{
+  z-index: 10;
+  font-size: 2rem;
+}
+.modal-background{
+background-color: white;
+}
+
+.boo{
+  padding: .5rem;
+  background-color: violet;
+  color: white;
+  border-radius: 5px;
+  margin: 3px;
+}
+.boo2{
+  background-color: gray;
+}
+.boo3{
+  background-color: rgb(11, 10, 20);
+}
