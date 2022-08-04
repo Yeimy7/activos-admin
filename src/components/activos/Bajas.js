@@ -1,76 +1,65 @@
-import React from 'react'
-import DataTable, { createTheme } from 'react-data-table-component';
+import React, { useState } from 'react'
+import { NavBar } from '../layout/NavBar';
+import { PageContainer } from '../layout/PageContainer';
+import { Sidebar } from '../layout/Sidebar';
+import { Table } from '../Table';
 
 
 const tablaActivos = [
-  { id: 1, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 2, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 3, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 4, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 5, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 6, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 7, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 8, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 9, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 10, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 11, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 12, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 13, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 14, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 15, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 16, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
-  { id: 17, nombre: 'silla', precio: 150, marca: "Los robles", color: "café" },
+  { id: 111, codigo: 'RYNV-938-15-0001', fecha: '02-07-2021', descripcion: "laptop marca DELL", motivo:'obsolescencia' },
+  { id: 112, codigo: 'RYNV-938-15-0002', fecha: '15-10-2021', descripcion: "escritorio de roble", motivo:'obsolescencia'},
+  { id: 113, codigo: 'RYNV-938-15-0003', fecha: '08-12-2021', descripcion: "Monitor marca LG", motivo:'obsolescencia' },
 
 ]
-
-const columnas = [
+const columns = [
   {
-    name: 'ID',
-    selector: 'id',
-    sortable: true
+    name: 'Nro',
+    cell: (row, index) => (index + 1),
+    grow: 0
   },
   {
-    name: 'Nombre',
-    selector: 'nombre',
-    sortable: false
+    name: 'Código',
+    selector: row => row.codigo,
   },
   {
-    name: 'Precio',
-    selector: 'precio',
-    sortable: false
+    name: 'Fecha',
+    selector: row => row.fecha,
   },
   {
-    name: 'Marca',
-    selector: 'marca',
-    sortable: false
+    name: 'Descripción',
+    selector: row => row.descripcion,
   },
   {
-    name: 'Color',
-    selector: 'color',
-    sortable: false
-  }
+    name: 'Motivo',
+    selector: row => row.motivo,
+  },
+  {
+    name: 'Acciones',
+    button: true,
+    width: '150px',
+    cell: row => (
+      // <div>
+        <button className='btn btn-success'>Dar de alta</button>
+      // </div>
+    ),
+  },
 ]
-const paginacionOpciones = {
-  rowsPerPageText: 'Filas por página',
-  rangeSeparatorText: 'de',
-  selectAllRowsItem: true,
-  selectAllRowsItemText: 'Todos'
-}
+
+
 export const Bajas = () => {
+
+  const [toggle, setToggle] = useState(false)
+
   return (
-    <div className='w-80 table table-responsive' >
-      <DataTable className='table-responsive'
-        columns={columnas}
-        data={tablaActivos}
-        title="Lista de activos"
-        pagination
-        paginationComponentOptions={paginacionOpciones}
-        fixedHeader
-        fixedHeaderScrollHeight='400px'
-        striped
-        responsive
-        theme="solarized"
-      />
+    <div className='home'>
+      <Sidebar toggle={toggle} />
+      <div className="w-100">
+        <NavBar toggle={toggle} setToggle={setToggle} />
+        <PageContainer toggle={toggle}>
+          <Table columns={columns} tablaActivos={tablaActivos} title='Activos dados de baja' />            
+        </PageContainer>
+      </div>
     </div>
+
   )
 }

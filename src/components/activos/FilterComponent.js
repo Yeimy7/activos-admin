@@ -1,23 +1,26 @@
 import React from 'react'
-import { FaSearch } from 'react-icons/fa'
+import { RiCloseLine } from 'react-icons/ri'
 
 export const FilterComponent = ({ onFilter, onClear, filterText }) => {
-  if(!filterText){
+  if (!filterText) {
     onClear()
   }
   return (
     <div className='barraBusqueda'>
-      <input
-        type="text"
-        placeholder="Buscar"
-        className='textField'
-        name="busqueda"
-        value={filterText}
-        onChange={onFilter}
-      />
-      <button type='button' className='btnBuscar' onClick={() => onClear}>
-        <FaSearch className='btnicon' />
-      </button>
+      <div className="input-group">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Código"
+          value={filterText}
+          onChange={onFilter}
+
+        />
+        <button className="btn btn-outline-secondary" type="button"  onClick={onClear}>
+          <RiCloseLine className='btnicon' />
+        </button>
+      </div>
     </div>
+
   )
 }

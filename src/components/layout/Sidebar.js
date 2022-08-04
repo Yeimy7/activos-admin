@@ -51,7 +51,7 @@ export const Sidebar = ({ toggle }) => {
                             <li>
                                 <Link to="/activos/bajas">
                                     <FaClipboardList />
-                                    <span>Bajas</span>
+                                    <span>Listado de bajas</span>
                                 </Link>
                             </li>
                             <li>

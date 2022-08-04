@@ -1,0 +1,13 @@
+.barraBusqueda {
+    // width: 250px;
+  .btn {
+    background-color: $gray5;
+    &:hover{
+        background-color: #6c757d;
+        color: $blanco;
+    }
+    .btnicon {
+      font-size: 1.2rem;
+    }
+  }
+}
